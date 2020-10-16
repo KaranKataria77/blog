@@ -1,0 +1,33 @@
+<html>
+    <title>SignUp Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <body>
+        <div class="ui secondary pointing menu" style="height: 60px; align-items: center;">
+            <a class="active item">
+              Home
+            </a>
+            <a class="item">
+              Messages
+            </a>
+            <a class="item">
+              Friends
+            </a>
+          </div>
+        <div class="container" style="width: 500px;">
+            <h1>This is Sign Up form:</h1>
+            <form action="/signup" method="POST">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="Username" />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Pssword" />
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

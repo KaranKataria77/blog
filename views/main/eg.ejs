@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Youtube Videos</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="ui secondary pointing menu" style="height: 60px; align-items: center;">
+            <a class="active item">
+              Home
+            </a>
+            <a class="item">
+              Messages
+            </a>
+            <a class="item">
+              Friends
+            </a>
+          </div>
+        <div class="container">
+            
+            <div class="row">
+                <% for(i=0;i<response.data.items.length;i++){ %>
+                <div class="col-md-3" style="display: flex; align-items: center; padding: 30px;">
+                    <div>
+                        <img src="<%= response.data.items[i].snippet.thumbnails.default.url %>" alt="" style="width: 80%;"/>
+                        <button class="btn btn-primary" style="width: 80%; margin-top: 10px;">Watch Now</button>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        
+    </body>
+</html>

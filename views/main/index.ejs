@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>BlogMe</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="ui secondary pointing menu" style="height: 60px; align-items: center;">
+            <a class="active item">
+              Home
+            </a>
+            <a class="item">
+              Messages
+            </a>
+            <a class="item">
+              Friends
+            </a>
+            <div class="right menu">
+                <% if(!currentUser){ %>
+                    <a href="/signup" class="ui item">
+                        SignUp
+                      </a>
+                    <a href="/login" class="ui item">
+                          Login In
+                    </a>
+                <% } else{ %>
+                    <a href="/logout" class="ui item">
+                        Log Out
+                    </a>
+                <% } %>
+            </div>
+          </div>
+
+          <div class="jumbotron">
+            <h1 class="display-4">BlogME</h1>
+            <p class="lead">Create Your Blog.</p>
+            <hr class="my-4">
+            <p>Create your own Blog</p>
+            <a class="btn btn-primary btn-lg" href="/blog">Create Now</a>
+          </div>
+
+
+          <div class="ui container">
+              <div class="ui divided items">
+                <% for(i=0;i<blog.length;i++){ %>
+                  <div class="item">
+                      <div class="image">
+                          <img src="https://lh3.googleusercontent.com/proxy/b-NAFaU1IzHgjnG4qYMH1HsZdXuWOpWvqQx43IQwesxmIbgv4NBByzsyQOVcPaIbTD3VjBwYyT3s9gapmjmymC3emUuBFExaJ8S7YYinxyPk" alt=""/>
+                      </div>
+                      <div class="content">
+                          <a class="ui huge header"><%= blog[i].title %></a>
+                          <div class="meta">
+                            <span class="cinema"><%= blog[i].author.username %></span>
+                        </div>
+                        <div class="description">
+                            <p><%= blog[i].blog %></p>
+                        </div>
+                        <div class="extra">
+                            <a href="/blog/<%= blog[i]._id %>" class="ui right floated primary button">
+                                Show Blog
+                                <i class="right chevron icon"></i>
+                            </a>
+                        </div>
+                      </div>
+                  </div>
+                  <% } %>
+              </div>
+              </div>      
+    </body>
+</html>

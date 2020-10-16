@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>BlogMe</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="ui secondary pointing menu" style="height: 60px; align-items: center;">
+            <a class="active item">
+              Home
+            </a>
+            <a class="item">
+              Messages
+            </a>
+            <a class="item">
+              Friends
+            </a>
+          </div>
+          <div class="container" style="width: 800px;">
+        <div class="ui card" style="width: 100%;">
+            <div class="content">
+                <div class="header" style="font-size:50px;"><%= blog.title %></div>
+                <div class="meta" style="font-size: 25px;">By <%= blog.author.username %></div>
+                <div class="description" style="font-size: 17px;">
+                    <p><%= blog.blog %></p>
+                </div>
+            </div>
+        </div>
+       
+        <div class="ui comments">
+            <h3 class="ui dividing header">Comments</h3>
+            <% for(i=0;i<blog.comments.length;i++){ %>
+            <div class="comment">
+                <a class="avatar">
+                    <img src="https://www.beingguru.com/wp-content/uploads/2016/09/Matt-Mullenweg.jpg" style="height: auto;"/>
+                </a>
+                <div class="content">
+                    <a class="author"><%= blog.comments[i].author.username %></a>
+                    <div class="metadata">
+                        <span class="date">Today at 5:43PM</span>
+                    </div>
+                    <div class="text">
+                        <%= blog.comments[i].text  %>
+                    </div>
+                </div>
+            </div>
+            <% } %>  
+            <a href="/blog/<%= blog._id %>/comment" class="btn btn-primary">Add Comment</a>
+        </div>
+        </div>
+    </body>
+</html>
