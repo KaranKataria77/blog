@@ -1,4 +1,4 @@
-console.log("script calling ....... ")
+console.log("script working ....... ")
 var _jsonp = (function () {
   let that = {};
   that.send = function (src, options) {
