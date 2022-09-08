@@ -328,6 +328,7 @@ var _glide = "";
 function _get_election_json_url_assembly_list() {
   var callBackForAssemblySwitchURL = "switchdata_assembly_election_2022";
   var jsonUrl = switchUrlAssembly;
+  console.log("url ..... ",jsonUrl)
   _jsonp.send(jsonUrl, {
     callbackName: callBackForAssemblySwitchURL,
     onSuccess: function (response) {
