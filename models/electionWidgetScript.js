@@ -410,6 +410,7 @@ async function _get_assembly_election_results(jsonUrl) {
           ?.story_url || "";
     }
   }
+  console.log("url .... ", _jsonAssemblyElectionURL)
 
   _jsonp.send(_jsonAssemblyElectionURL, {
     callbackName: _callbackAssemblyName,
